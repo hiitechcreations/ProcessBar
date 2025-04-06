@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+    <com.hiitech.progressbar.CustomVerticalProgressBar
+        android:id="@+id/brightnessProgress"
+        android:layout_width="10dp"
+        android:layout_height="200dp"
+        app:cvp_max="32"
+        app:cvp_backgroundLineWidth="5dp"
+        app:cvp_backgroundColor="#E0E0E0"
+        app:cvp_progressCornerRadius="8dp"
+        app:cvp_FirstColor="@color/yellow"
+        app:cvp_SecondColor="@color/yellow"
+        app:cvp_ThirdColor="@color/red"
+        app:cvp_FirstZonePercentage="0.25"
+        app:cvp_SecondZonePercentage="0.25"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress: 0.0"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/decreaseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/increaseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+
+    </LinearLayout>
+
+</LinearLayout>
