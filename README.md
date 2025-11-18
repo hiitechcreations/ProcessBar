@@ -22,12 +22,13 @@ This repository contains three widgets:
 
 # 📋 Badges (copy to top of README)
 
-```
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
 [![Release](https://img.shields.io/badge/release-v1.0.0-blue)](#)
 [![Stars](https://img.shields.io/github/stars/yourusername/yourrepo.svg)](#)
-```
+
+
 
 Place these directly under the main title in README.md.
 
