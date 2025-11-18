@@ -251,7 +251,8 @@ class MainActivity : AppCompatActivity() {
 
 ```markdown
 ![Vertical Demo](assets/Screenshot_20251117-204521.png)
-![Wave Demo](assets/demo-wave.gif)
+![Wave Demo](https://github.com/hiitechcreations/ProcessBar/blob/2d13cd2112a3360c85143c3ec1c20ef3343df390/assets/Screenshot_20251118-111925.jpg?raw=true))
+
 ![Alt text](assets/Screenshot_20251118-111925.jpg)
 assets/Screenshot_20251117-204521.png
 ```
