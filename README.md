@@ -249,13 +249,10 @@ class MainActivity : AppCompatActivity() {
 3. Add the GIF files to the repo, e.g. `assets/demo-vertical.gif`, `assets/demo-wave.gif`.
 4. Reference them in README:
 
-markdown
-![Vertical Demo](assets/Screenshot_20251117-204521.png)
-![Wave Demo](https://github.com/hiitechcreations/ProcessBar/blob/2d13cd2112a3360c85143c3ec1c20ef3343df390/assets/Screenshot_20251118-111925.jpg?raw=true))
 
-![Alt text](assets/Screenshot_20251118-111925.jpg)
-assets/Screenshot_20251117-204521.png
-
+![Vertical Demo](assets/Screenshot_20251118-111901.jpg)
+![Wave Demo](assets/Screenshot_20251118-111901.jpg)
+![custome seek bar](assets/Screenshot_20251118-111948.jpg)
 
 **Pro tip**: Keep GIFs under 5–8 MB and crop to important area. For GitHub, PNG screenshots + one short GIF is usually best for performance.
 
