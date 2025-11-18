@@ -250,7 +250,7 @@ class MainActivity : AppCompatActivity() {
 4. Reference them in README:
 
 ```markdown
-![Vertical Demo](assets/demo-vertical.gif)
+![Vertical Demo](assets/assets/Screenshot_20251117-204521.png)
 ![Wave Demo](assets/demo-wave.gif)
 ```
 
