@@ -53,8 +53,8 @@ allprojects {
  Step 2. Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.hiitechcreations:verticalProgressBar:v2.6'
-	}
+    implementation 'com.github.hiitechcreations:verticalProgressBar:main-SNAPSHOT'
+}
 ```
 
 
