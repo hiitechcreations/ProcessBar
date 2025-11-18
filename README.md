@@ -25,8 +25,8 @@ This repository contains three widgets:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hiitechcreations/ProcessBar)](https://github.com/hiitechcreations/ProcessBar/releases/latest)
-[![Stars](https://img.shields.io/github/stars/hiitechcreations/ProcessBar?style=social)](https://github.com/hiitechcreations/ProcessBar)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hiitechcreations//verticalProgressBar)](https://github.com/hiitechcreations//verticalProgressBar/releases/latest)
+[![Stars](https://img.shields.io/github/stars/hiitechcreations/ProcessBar?style=social)](https://github.com/hiitechcreations//verticalProgressBar)
 
 
 
