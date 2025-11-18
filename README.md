@@ -252,6 +252,7 @@ class MainActivity : AppCompatActivity() {
 ```markdown
 ![Vertical Demo](assets/assets/Screenshot_20251117-204521.png)
 ![Wave Demo](assets/demo-wave.gif)
+assets/Screenshot_20251117-204521.png
 ```
 
 **Pro tip**: Keep GIFs under 5–8 MB and crop to important area. For GitHub, PNG screenshots + one short GIF is usually best for performance.
