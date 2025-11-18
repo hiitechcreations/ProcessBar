@@ -14,12 +14,9 @@ This repository contains three widgets:
 
 # 🚀 What’s included
 
-* Kotlin source files for each widget
-* `res/values/attrs.xml` with all attributes (provided)
-* Sample usage for XML and Kotlin
-* Example app structure and sample Activity/Fragment snippets
-* Guidance to add GIFs/screenshots and badges for GitHub
-* Gradle module hints — how to package as a library
+* custome wave progress bar like a13+ notification progress bar
+* vertical progress bar 
+* custom progress bar with text lebels
 
 ---
 
@@ -36,40 +33,29 @@ Place these directly under the main title in README.md.
 
 ---
 
-# 📥 Installation / Copy
+# 📥 Installation
 
-There are two simple integration options:
+1. Add this in your root build.gradle at the end of repositories in allprojects section:
+2. Then add this dependency to your module-level build.gradle in dependencies section:
 
-1. **Copy the Kotlin files** into your app module (quickest)
-
-   * `app/src/main/java/com/hiitech/progressbar/CustomVerticalProgressBar.kt`
-   * `app/src/main/java/com/hiitech/progressbar/CustomSeekBar.kt`
-   * `app/src/main/java/com/hiitech/progressbar/WaveSeekBar.kt`
-   * `app/src/main/res/values/attrs.xml` (attributes file — included)
-
-2. **Make a Gradle library module** (recommended for reuse)
-
-   * Create new module `:progressbar` and move sources/resources there.
-   * Add `implementation project(":progressbar")` into app module.
-
----
-
-# 🧩 attrs.xml (use the one you already have)
-
-Paste your `attrs.xml` under `res/values/attrs.xml` — the file you shared is perfect. Example snippet (already included in your repo):
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="CustomVerticalProgressBar"> ... </declare-styleable>
-    <declare-styleable name="CustomSeekBar"> ... </declare-styleable>
-    <declare-styleable name="WaveSeekBar"> ... </declare-styleable>
-</resources>
+ Step 2 Add it in your root settings.gradle at the end of repositories:
+``` 
+	dependencyResolutionManagement {
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
-(Full file is already present in your project.)
+ In app module `build.gradle` add:
+ Step 2. Add the dependency
+```
+dependencies {
+	        implementation 'com.github.hiitechcreations:verticalProgressBar:v2.6'
+	}
+```
 
----
 
 # 📘 Full README content (detailed)
 
@@ -111,17 +97,18 @@ Paste your `attrs.xml` under `res/values/attrs.xml` — the file you shared is p
 Example layout snippet:
 
 ```xml
-<com.hiitech.progressbar.CustomVerticalProgressBar
-    android:id="@+id/volumeProgress"
-    android:layout_width="6dp"
-    android:layout_height="150dp"
-    app:cvp_max="100"
-    app:cvp_backgroundColor="#FFFFFF"
-    app:cvp_FirstColor="#7B3EFF"
-    app:cvp_SecondColor="#FFEB3B"
-    app:cvp_ThirdColor="#FF0000"
-    app:cvp_FirstZonePercentage="0.5"
-    app:cvp_SecondZonePercentage="0.25" />
+  <com.hiitech.progressbar.CustomVerticalProgressBar
+            android:id="@+id/volumeProgress"
+            android:layout_width="5dp"
+            android:layout_height="100dp"
+            app:cvp_backgroundLineWidth="5dp"
+            app:cvp_backgroundColor="#FFFFFF"
+            app:cvp_progressCornerRadius="8dp"
+            app:cvp_zone1Threshold="100"
+            app:cvp_zone2Threshold="150"
+            app:cvp_zone1Color="?attr/colorPrimary"
+            app:cvp_zone2Color="@color/yellow"
+            app:cvp_zone3Color="@color/red" />
 ```
 
 Kotlin usage (Activity/Fragment):
@@ -172,25 +159,6 @@ binding.volumeProgress.progressValue = 120
 
 ---
 
-## 📁 Example app
-
-To help users quickly try the widgets, add a small sample app module in the repository.
-
-**Project layout suggestion**:
-
-```
-/ (root)
-  ├─ app/ (sample app)
-  │    ├─ src/main/java/com/hiitech/demo/
-  │    │     ├─ MainActivity.kt
-  │    ├─ src/main/res/layout/activity_main.xml
-  │    ├─ src/main/res/drawable/ (optional)
-  ├─ progressbar/ (library module or just Kotlin files)
-  ├─ README.md
-  ├─ attrs.xml
-  ├─ LICENSE
-```
-
 **Sample Activity (MainActivity.kt)**
 
 ```kotlin
@@ -225,16 +193,53 @@ class MainActivity : AppCompatActivity() {
 
 ```xml
 <LinearLayout ... android:orientation="vertical">
-    <com.hiitech.progressbar.CustomVerticalProgressBar
-        android:id="@+id/volumeProgress"
-        android:layout_width="8dp"
-        android:layout_height="180dp"
-        app:cvp_max="100" />
+      <com.hiitech.progressbar.CustomVerticalProgressBar
+            android:id="@+id/volumeProgress"
+            android:layout_width="5dp"
+            android:layout_height="100dp"
+            app:cvp_backgroundLineWidth="5dp"
+            app:cvp_backgroundColor="#FFFFFF"
+            app:cvp_progressCornerRadius="8dp"
+            app:cvp_zone1Threshold="100"
+            app:cvp_zone2Threshold="150"
+            app:cvp_zone1Color="?attr/colorPrimary"
+            app:cvp_zone2Color="@color/yellow"
+            app:cvp_zone3Color="@color/red" />
 
-    <com.hiitech.progressbar.WaveSeekBar
-        android:id="@+id/waveSeek"
-        android:layout_width="match_parent"
-        android:layout_height="80dp" />
+    <com.hiitech.playme.WaveSeekBar
+            android:id="@+id/audio_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:wsb_bgColor="@color/darker_grey"
+            app:wsb_fgColor="@color/black"
+            app:wsb_thumbColor="@color/black"
+            app:wsb_strokeWidth="4dp"
+            app:wsb_thumbWidth="16dp"
+            app:wsb_thumbHeight="48dp"
+            app:wsb_baseAmplitude="6"
+            app:wsb_wavelength="90dp"
+            app:wsb_waveEnabled="true"
+            app:wsb_waveDuration="2500"
+            app:wsb_max="200"
+            app:wsb_progress="40"/>
+
+  <com.hiitech.progressbar.CustomSeekBar
+                android:id="@+id/customSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                app:barColor="#555555"
+                android:padding="5dp"
+                app:progressColor="?attr/colorPrimary"
+                app:thumbColor="#FFFFFF"
+                app:textColor="#FFFFFF"
+                app:dotColor="#FFFFFF"
+                app:dotAlpha="80"
+                app:barHeight="6dp"
+                app:thumbRadius="8dp"
+                app:textSize="12sp"
+                app:showDots="true"
+                app:showLabels="true" />
 
     <Button android:id="@+id/btnIncrease" android:text="+5" ... />
 </LinearLayout>
@@ -242,93 +247,27 @@ class MainActivity : AppCompatActivity() {
 
 ---
 
-## 🖼️ GIF previews & screenshots (how to add)
-
-1. Create a short screen recording (3–6s) showing each widget in action.
-2. Convert to GIF (use ezgif.com or ffmpeg).
-3. Add the GIF files to the repo, e.g. `assets/demo-vertical.gif`, `assets/demo-wave.gif`.
-4. Reference them in README:
-
-
-![Vertical Demo](assets/Screenshot_20251118-111901.jpg)
+## 🖼️ GIF previews & screenshots 
+![Vertical Demo](assets/Screenshot_20251118-111925.jpg)
+![Vertical Demo](assets/Screenshot_20251118-111931.jpg)
 ![Wave Demo](assets/Screenshot_20251118-111901.jpg)
 ![custome seek bar](assets/Screenshot_20251118-111948.jpg)
 
-**Pro tip**: Keep GIFs under 5–8 MB and crop to important area. For GitHub, PNG screenshots + one short GIF is usually best for performance.
-
----
-
-## 🧪 Automated screenshot + GIF generation (optional)
-
-You can add a small `tools/record` script or use CI to generate preview GIFs from the emulator, but that's optional.
-
----
-
-## 📦 Gradle-ready library version
-
-To package the widget set as a Gradle module (local module or AAR):
-
-1. Create a new module: **File → New → New Module → Android Library** and name it `progressbar`.
-2. Move the Kotlin files to `progressbar/src/main/java/...` and `attrs.xml` to `progressbar/src/main/res/values/attrs.xml`.
-3. Edit `progressbar/build.gradle` (Kotlin DSL or Groovy) – keep minimal configuration:
-
-```groovy
-plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-}
-
-android {
-    namespace 'com.hiitech.progressbar'
-    compileSdk 34
-
-    defaultConfig {
-        minSdk 21
-        targetSdk 34
-    }
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
-}
-```
-
-4. In app module `build.gradle` add:
-
-```groovy
-implementation project(':progressbar')
-```
-
-5. Build → Generate AAR if you want to publish the library.
+**More**: More customization available i can't show all things here 
 
 ---
 
 ## 🧾 LICENSE
 
-This project uses the MIT license. Add `LICENSE` file with the MIT text and keep `Copyright (c) YEAR YourName`.
+This project uses the MIT license. Add `LICENSE` file with the MIT text and keep `Copyright (c) 2025 HiitechCreations`.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome. Please open issues or PRs for features, bug fixes or performance improvements. Add a `CONTRIBUTING.md` if you want contribution guidelines.
+Contributions are welcome. Please open issues or PRs for features, bug fixes or performance improvements.
 
----
-
-## ✅ Checklist before publishing on GitHub
-
-* [ ] Add screenshots & GIFs (assets/)
-* [ ] Add LICENSE (MIT)
-* [ ] Update README badges (CI / release)
-* [ ] Add sample app and demo Activity
-* [ ] Test on multiple devices & densities
-
----
 
 ## Contact
 
-If you need help integrating or want me to generate the example app and GIFs for you, tell me which images/gifs you want and I will create the sample code and placeholders.
-
----
-
-*Document generated for: CustomVerticalProgressBar, CustomSeekBar, WaveSeekBar*
+feel free to contact me 
